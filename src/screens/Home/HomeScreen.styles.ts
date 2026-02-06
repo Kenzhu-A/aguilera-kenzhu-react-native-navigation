@@ -2,44 +2,50 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   grid: {
-    paddingBottom: 100,
+    paddingBottom: 100, // Space for the FAB
+    paddingHorizontal: 6,
   },
   toggleBtn: {
     padding: 8,
-    marginRight: 10,
+    marginRight: 4,
   },
+  /* FAB (Floating Action Button) */
   fab: {
     position: 'absolute',
     right: 20,
     bottom: 30,
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+    width: 64,
+    height: 64,
+    borderRadius: 32,
     justifyContent: 'center',
     alignItems: 'center',
-    elevation: 6,
+    elevation: 8,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 3 },
+    shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
-    shadowRadius: 4.5,
+    shadowRadius: 4.65,
   },
   fabText: {
-    fontSize: 24,
+    fontSize: 28,
   },
+  /* Notification Badge */
   badge: {
     position: 'absolute',
-    top: -4,
-    right: -4,
+    top: 0,
+    right: 0,
     backgroundColor: '#EF4444',
+    minWidth: 20,
+    height: 20,
     borderRadius: 10,
-    paddingHorizontal: 6,
-    paddingVertical: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 4,
     borderWidth: 2,
-    borderColor: 'white',
+    borderColor: 'white', // Makes the badge pop against the primary color
   },
   badgeText: {
     color: '#fff',
-    fontSize: 11,
-    fontWeight: '700',
+    fontSize: 10,
+    fontWeight: '900',
   },
 });
