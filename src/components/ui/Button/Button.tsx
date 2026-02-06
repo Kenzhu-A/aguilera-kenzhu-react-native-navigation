@@ -1,6 +1,7 @@
 import React from 'react';
-import { Pressable, Text, StyleSheet } from 'react-native';
-import { useTheme } from '../../context/ThemeContext';
+import { Pressable, Text } from 'react-native';
+import { useTheme } from '../../../context/ThemeContext';
+import { styles } from './Button.styles';
 
 interface Props {
   title: string;
@@ -29,16 +30,4 @@ export default function Button({ title, onPress, style, textColor }: Props) {
   );
 }
 
-const styles = StyleSheet.create({
-  button: {
-    height: 52,
-    borderRadius: 14,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: '700',
-  },
-});
+

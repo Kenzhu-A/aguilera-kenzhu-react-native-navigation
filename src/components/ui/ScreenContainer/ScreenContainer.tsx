@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { useTheme } from '../../context/ThemeContext';
+import { View } from 'react-native';
+import { useTheme } from '../../../context/ThemeContext';
+import { styles } from './ScreenContainer.styles';
 
 export default function ScreenContainer({
   children,
@@ -16,9 +17,4 @@ export default function ScreenContainer({
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-  },
-});
+

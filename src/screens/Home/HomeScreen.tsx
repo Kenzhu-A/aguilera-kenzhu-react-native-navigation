@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useEffect } from "react";
 import { FlatList, Pressable, View, Text, BackHandler } from "react-native";
 
-import ScreenContainer from "../../components/ui/ScreenContainer";
+import ScreenContainer from "../../components/ui/ScreenContainer/ScreenContainer";
 import ProductCard from "../../components/product/ProductCard";
 import { PRODUCTS } from "../../data/products";
 import { useCart } from "../../hooks/useCart";

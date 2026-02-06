@@ -1,7 +1,7 @@
 import React from "react";
 import { Alert, Text, View, ScrollView } from "react-native";
-import ScreenContainer from "../../components/ui/ScreenContainer";
-import Button from "../../components/ui/Button";
+import ScreenContainer from "../../components/ui/ScreenContainer/ScreenContainer";
+import Button from "../../components/ui/Button/Button";
 import { useCart } from "../../hooks/useCart";
 import { formatCurrency } from "../../utils/currency";
 import { useTheme } from "../../context/ThemeContext";

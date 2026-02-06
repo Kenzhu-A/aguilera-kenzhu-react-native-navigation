@@ -3,13 +3,13 @@ import {
   View,
   Text,
   Image,
-  StyleSheet,
 } from 'react-native';
 
-import Button from '../ui/Button';
+import Button from '../ui/Button/Button';
 import { Product } from '../../types/product';
 import { formatCurrency } from '../../utils/currency';
 import { useTheme } from '../../context/ThemeContext';
+import { styles } from './ProductCard.styles';
 
 interface Props {
   product: Product;
@@ -36,36 +36,3 @@ export default function ProductCard({ product, onAdd }: Props) {
   );
 }
 
-const styles = StyleSheet.create({
-  card: {
-    flex: 1,
-    borderRadius: 16,
-    padding: 12,
-    margin: 6,
-    // Add these for better dark mode card visibility
-    borderWidth: 1,
-    borderColor: 'transparent', // Will stay transparent in light
-    elevation: 3,
-    shadowColor: '#000',
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-  },
-
-  img: {
-    height: 120,
-    borderRadius: 12,
-    marginBottom: 8,
-  },
-
-  name: {
-    fontSize: 14,
-    fontWeight: '600',
-    marginBottom: 6,
-  },
-
-  price: {
-    fontSize: 16,
-    fontWeight: '700',
-    marginBottom: 8,
-  },
-});

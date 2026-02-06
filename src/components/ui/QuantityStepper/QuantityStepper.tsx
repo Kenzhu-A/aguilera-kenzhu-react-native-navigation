@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text, Pressable, StyleSheet } from 'react-native';
-import { useTheme } from '../../context/ThemeContext';
+import { useTheme } from '../../../context/ThemeContext';
+import { styles } from './QuantityStepper.styles';
+
 
 interface Props {
   value: number;
@@ -31,15 +33,3 @@ export default function QuantityStepper({ value, onIncrease, onDecrease }: Props
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: { flexDirection: 'row', alignItems: 'center' },
-  btn: {
-    padding: 8,
-    borderWidth: 1,
-    borderRadius: 8,
-    minWidth: 32,
-    alignItems: 'center',
-  },
-  qty: { marginHorizontal: 10, fontWeight: '600' },
-});
