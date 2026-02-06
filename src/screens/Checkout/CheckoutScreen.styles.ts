@@ -1,9 +1,11 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
+
   sectionTitle: { 
     fontSize: 22, 
     fontWeight: '700', 
+    marginTop: 15,
     marginBottom: 16 
   },
   summaryCard: { 

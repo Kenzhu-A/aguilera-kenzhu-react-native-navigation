@@ -1,6 +1,5 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
 import HomeScreen from '../screens/Home/HomeScreen';
 import CartScreen from '../screens/Cart/CartScreen';
 import CheckoutScreen from '../screens/Checkout/CheckoutScreen';
@@ -16,8 +15,9 @@ export default function AppNavigator() {
       screenOptions={{
         headerTitleAlign: 'center',
         headerStyle: {
-          backgroundColor: colors.background,
+          backgroundColor: colors.card,
         },
+        headerShadowVisible: false,
         headerTintColor: colors.text,
         contentStyle: {
           backgroundColor: colors.background,

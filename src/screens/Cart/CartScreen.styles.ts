@@ -1,10 +1,16 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
+  listContent: {
+    paddingTop: 24,       // Increase this number to move items further down
+    paddingHorizontal: 16, 
+    paddingBottom: 120,   // Space so the last item isn't hidden by the footer
+  },
   row: { 
     padding: 12, 
-    borderRadius: 14, 
-    marginBottom: 12, 
+    borderRadius: 15,
+    marginTop: 13, 
+    marginBottom: 2, 
     flexDirection: 'row', 
     alignItems: 'center' 
   },

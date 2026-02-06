@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   grid: {
+    paddingTop: 12,
     paddingBottom: 20,
     paddingHorizontal: 6,
   },
