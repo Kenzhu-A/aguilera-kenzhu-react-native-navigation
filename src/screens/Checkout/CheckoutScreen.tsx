@@ -1,11 +1,11 @@
-import React from 'react';
-import { Alert, Text, View, ScrollView } from 'react-native';
-import ScreenContainer from '../../components/ui/ScreenContainer';
-import Button from '../../components/ui/Button';
-import { useCart } from '../../hooks/useCart';
-import { formatCurrency } from '../../utils/currency';
-import { useTheme } from '../../context/ThemeContext';
-import { styles } from './CheckoutScreen.styles';
+import React from "react";
+import { Alert, Text, View, ScrollView } from "react-native";
+import ScreenContainer from "../../components/ui/ScreenContainer";
+import Button from "../../components/ui/Button";
+import { useCart } from "../../hooks/useCart";
+import { formatCurrency } from "../../utils/currency";
+import { useTheme } from "../../context/ThemeContext";
+import { styles } from "./CheckoutScreen.styles";
 
 export default function CheckoutScreen({ navigation }: any) {
   const { state, dispatch } = useCart();
@@ -14,14 +14,14 @@ export default function CheckoutScreen({ navigation }: any) {
   const total = state.items.reduce((sum, i) => sum + i.price * i.quantity, 0);
 
   const handleCheckout = () => {
-    Alert.alert('Success', 'Order placed successfully!', [
+    Alert.alert("Success", "Order placed successfully!", [
       {
-        text: 'OK',
+        text: "OK",
         onPress: () => {
-          dispatch({ type: 'clearCart' });
+          dispatch({ type: "clearCart" });
           navigation.reset({
             index: 0,
-            routes: [{ name: 'Home' }],
+            routes: [{ name: "Home" }],
           });
         },
       },
@@ -34,21 +34,26 @@ export default function CheckoutScreen({ navigation }: any) {
         <Text style={[styles.sectionTitle, { color: colors.text }]}>
           Order Summary
         </Text>
-        
+
         <View style={[styles.summaryCard, { backgroundColor: colors.card }]}>
           {state.items.map((item) => (
             <View key={item.id} style={styles.itemRow}>
               <Text style={[styles.itemText, { color: colors.textSecondary }]}>
                 {item.quantity}x {item.name}
               </Text>
-              <Text style={[styles.itemText, { color: colors.text, fontWeight: '600' }]}>
+              <Text
+                style={[
+                  styles.itemText,
+                  { color: colors.text, fontWeight: "600" },
+                ]}
+              >
                 {formatCurrency(item.price * item.quantity)}
               </Text>
             </View>
           ))}
-          
+
           <View style={[styles.divider, { backgroundColor: colors.border }]} />
-          
+
           <View style={styles.totalRow}>
             <Text style={[styles.totalLabel, { color: colors.text }]}>
               Total to Pay
@@ -59,21 +64,23 @@ export default function CheckoutScreen({ navigation }: any) {
           </View>
         </View>
 
-        <Button 
-          title="Confirm & Pay" 
-          onPress={handleCheckout} 
-          style={styles.checkoutBtn} 
+        <Button
+          title="Confirm & Pay"
+          onPress={handleCheckout}
+          style={styles.checkoutBtn}
         />
-        
-        <Button 
-          title="Go Back" 
-          onPress={() => navigation.goBack()} 
-          style={{ 
-            backgroundColor: 'transparent', 
-            marginTop: 10,
-            borderWidth: 1,
-            borderColor: colors.border
-          }} 
+
+        <Button
+          title="Go Back"
+          onPress={() => navigation.goBack()}
+          textColor={colors.text} // Pass the dynamic theme text color here
+          style={[
+            styles.backBtn,
+            {
+              backgroundColor: "transparent",
+              borderColor: colors.border,
+            },
+          ]}
         />
       </ScrollView>
     </ScreenContainer>

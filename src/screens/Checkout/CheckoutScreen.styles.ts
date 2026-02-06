@@ -43,6 +43,17 @@ export const styles = StyleSheet.create({
     fontWeight: '800' 
   },
   checkoutBtn: { 
-    marginTop: 10 
+    marginTop: 10,
+    // Add shadow to the primary button to make it look "main"
+    elevation: 4,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+  },
+  backBtn: {
+    marginTop: 12,
+    borderWidth: 1.5, // Slightly thicker for better visibility
+    height: 52,      // Keep height consistent with the main button
   },
 });

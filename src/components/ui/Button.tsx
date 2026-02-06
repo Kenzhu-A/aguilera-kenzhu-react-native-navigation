@@ -6,9 +6,10 @@ interface Props {
   title: string;
   onPress: () => void;
   style?: any;
+  textColor?: string;
 }
 
-export default function Button({ title, onPress, style }: Props) {
+export default function Button({ title, onPress, style, textColor }: Props) {
   const { colors } = useTheme();
 
   return (
@@ -20,7 +21,10 @@ export default function Button({ title, onPress, style }: Props) {
         style,
       ]}
     >
-      <Text style={styles.text}>{title}</Text>
+      {/* Use the textColor prop if provided, otherwise default to white */}
+      <Text style={[styles.text, textColor ? { color: textColor } : null]}>
+        {title}
+      </Text>
     </Pressable>
   );
 }
